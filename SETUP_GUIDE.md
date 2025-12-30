@@ -88,36 +88,6 @@ curl -X POST http://localhost:8000/api/posts \
 4. Update the `token` variable with your token
 5. Test other endpoints
 
----
-
-## Project Structure
-
-```
-dashboard/
-├── app/
-│   ├── Enums/              # PostStatus, UserRole, PostAction enums
-│   ├── Http/
-│   │   ├── Controllers/
-│   │   │   └── API/        # AuthController, PostController
-│   │   ├── Middleware/     # RoleMiddleware
-│   ├── Models/             # User, Post, PostLog models
-│   ├── Policies/           # PostPolicy
-│   └── Services/           # PostLogService
-├── config/                 # Configuration files
-├── database/
-│   ├── migrations/         # Database migrations
-│   └── seeders/            # Database seeders
-├── routes/
-│   ├── api.php            # API routes
-│   ├── web.php            # Web routes
-│   └── console.php        # Console routes
-├── .env                   # Environment configuration
-├── composer.json          # PHP dependencies
-└── README.md             # Project documentation
-```
-
----
-
 ## Key Features
 
 ### 1. Role-Based Access Control
@@ -257,12 +227,3 @@ php artisan view:cache
 5. Use queue workers for background jobs
 6. Enable HTTPS with SSL certificate
 
----
-
-## Support
-
-For detailed API documentation, see [API_DOCUMENTATION.md](API_DOCUMENTATION.md)
-
-## License
-
-MIT License

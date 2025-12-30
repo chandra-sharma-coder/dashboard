@@ -63,25 +63,6 @@ A complete Laravel 12 application implementing a role-based content approval wor
 
 ---
 
-## Architecture & Best Practices
-
-### Clean Architecture
-```
-┌─────────────────────────────────────┐
-│         HTTP Layer (Routes)          │
-├─────────────────────────────────────┤
-│      Controllers (API Layer)         │
-├─────────────────────────────────────┤
-│    Policies & Middleware (Auth)      │
-├─────────────────────────────────────┤
-│     Services (Business Logic)        │
-├─────────────────────────────────────┤
-│      Models (Data Layer)             │
-├─────────────────────────────────────┤
-│         Database (Storage)           │
-└─────────────────────────────────────┘
-```
-
 ### Design Patterns Used
 1. **Repository Pattern**: Eloquent ORM
 2. **Service Layer**: PostLogService for logging
@@ -102,75 +83,6 @@ A complete Laravel 12 application implementing a role-based content approval wor
 
 ---
 
-## Project Structure
-
-```
-dashboard/
-├── app/
-│   ├── Enums/
-│   │   ├── PostAction.php          # Enum for log actions
-│   │   ├── PostStatus.php          # Enum for post statuses
-│   │   └── UserRole.php            # Enum for user roles
-│   ├── Http/
-│   │   ├── Controllers/
-│   │   │   ├── API/
-│   │   │   │   ├── AuthController.php    # Authentication
-│   │   │   │   └── PostController.php    # Post CRUD
-│   │   │   └── Controller.php
-│   │   └── Middleware/
-│   │       └── RoleMiddleware.php   # Role-based access
-│   ├── Models/
-│   │   ├── Post.php                 # Post model
-│   │   ├── PostLog.php              # Activity log model
-│   │   └── User.php                 # User model
-│   ├── Policies/
-│   │   └── PostPolicy.php           # Authorization rules
-│   ├── Providers/
-│   │   ├── AppServiceProvider.php
-│   │   └── AuthServiceProvider.php
-│   └── Services/
-│       └── PostLogService.php       # Logging service
-├── bootstrap/
-│   ├── app.php                      # Application bootstrap
-│   └── providers.php
-├── config/
-│   ├── app.php                      # Application config
-│   ├── auth.php                     # Auth config
-│   ├── database.php                 # Database config
-│   └── sanctum.php                  # API auth config
-├── database/
-│   ├── factories/
-│   │   ├── PostFactory.php          # Test data factory
-│   │   └── UserFactory.php          # Test data factory
-│   ├── migrations/
-│   │   ├── 0001_01_01_000000_create_users_table.php
-│   │   ├── 2024_12_29_000001_create_posts_table.php
-│   │   ├── 2024_12_29_000002_create_post_logs_table.php
-│   │   └── 2024_12_29_000003_create_personal_access_tokens_table.php
-│   └── seeders/
-│       ├── DatabaseSeeder.php
-│       ├── PostSeeder.php
-│       └── UserSeeder.php
-├── routes/
-│   ├── api.php                      # API routes
-│   ├── console.php                  # Console routes
-│   └── web.php                      # Web routes
-├── tests/
-│   ├── Feature/
-│   │   └── PostManagementTest.php   # Feature tests
-│   └── TestCase.php
-├── .env                             # Environment config
-├── .env.example                     # Environment template
-├── .gitignore                       # Git ignore rules
-├── API_DOCUMENTATION.md             # Complete API docs
-├── composer.json                    # PHP dependencies
-├── phpunit.xml                      # Testing config
-├── postman_collection.json          # Postman collection
-├── README.md                        # Project overview
-└── SETUP_GUIDE.md                   # Setup instructions
-```
-
----
 
 ## Database Schema
 

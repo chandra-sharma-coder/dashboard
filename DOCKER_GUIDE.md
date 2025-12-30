@@ -1,11 +1,5 @@
 # Docker Quick Start Guide
 
-## Prerequisites
-- Docker Desktop installed on Windows
-- Download from: https://www.docker.com/products/docker-desktop
-
-## Quick Start
-
 ### 1. Start the Application
 ```powershell
 # Navigate to project directory
